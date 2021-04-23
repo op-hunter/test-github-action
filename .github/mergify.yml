@@ -1,0 +1,9 @@
+pull_request_rules:
+  - name: auto merge and rewrite message from pull request body
+    conditions:
+      - base=master
+      - "#approved-reviews-by>=1"
+    actions:
+      merge:
+        method: squash
+        commit_message: title+body
